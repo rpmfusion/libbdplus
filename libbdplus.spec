@@ -1,6 +1,6 @@
 Name:           libbdplus
-Version:        0.1.0
-Release:        2%{?dist}
+Version:        0.1.1
+Release:        1%{?dist}
 Summary:        Open implementation of BD+ protocol
 License:        LGPLv2+
 URL:            http://www.videolan.org/developers/libbdplus.html
@@ -55,6 +55,15 @@ find %{buildroot} -name '*.la' -delete
 
 
 %changelog
+* Wed Jun 04 2014 Xavier Bachelot <xavier@bachelot.org> - 0.1.1-1
+- Update to 0.1.1.
+
+* Sat Apr 26 2014 Xavier Bachelot <xavier@bachelot.org> - 0.1.0-4
+- Add patch for libgcrypt 1.6 support.
+
+* Sat Apr 26 2014 Nicolas Chauvet <kwizart@gmail.com> - 0.1.0-3
+- Rebuilt for libgcrypt
+
 * Wed Jan 08 2014 Xavier Bachelot <xavier@bachelot.org> 0.1.0-2
 - Add version to libaacs BuildRequires:.
 - Remove Group: tags.
