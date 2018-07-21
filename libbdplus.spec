@@ -1,11 +1,12 @@
 Name:           libbdplus
 Version:        0.1.2
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Open implementation of BD+ protocol
 License:        LGPLv2+
 URL:            http://www.videolan.org/developers/libbdplus.html
 Source0:        ftp://ftp.videolan.org/pub/videolan/%{name}/%{version}/%{name}-%{version}.tar.bz2
 
+BuildRequires:  gcc
 BuildRequires:  libgcrypt-devel
 BuildRequires:  libaacs-devel >= 0.7.0
 
@@ -39,13 +40,12 @@ make %{?_smp_mflags}
 find %{buildroot} -name '*.la' -delete
 
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
+%ldconfig_scriptlets
 
 
 %files
-%doc COPYING ChangeLog README.txt
+%doc ChangeLog README.txt
+%license COPYING
 %{_libdir}/*.so.*
 
 %files devel
@@ -55,6 +55,11 @@ find %{buildroot} -name '*.la' -delete
 
 
 %changelog
+* Fri Jul 20 2018 Xavier Bachelot <xavier@bachelot.org> - 0.1.2-5
+- Add BR: gcc.
+- Use %%license.
+- Use %%ldconfig_scriptlets.
+
 * Thu Mar 01 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 0.1.2-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
