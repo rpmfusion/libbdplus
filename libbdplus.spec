@@ -1,6 +1,6 @@
 Name:           libbdplus
 Version:        0.2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Open implementation of BD+ protocol
 License:        LGPLv2+
 URL:            http://www.videolan.org/developers/libbdplus.html
@@ -56,6 +56,10 @@ find %{buildroot} -name '*.la' -delete
 
 
 %changelog
+* Sun Aug 07 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.2.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
+  5.1
+
 * Sun Mar 06 2022 Xavier Bachelot <xavier@bachelot.org> - 0.2.0-1
 - Update to 0.2.0
 
